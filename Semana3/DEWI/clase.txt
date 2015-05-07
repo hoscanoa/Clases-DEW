@@ -1,0 +1,19 @@
+ [Required(ErrorMessage = "Ingrese el ID")]
+        [RegularExpression("[0-9]{3}", ErrorMessage = "Solo hasta 3 dígitos")]
+        [Key]
+        public int idmat { get; set; }
+
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Ingrese la descripción")]
+        public string desmat { get; set; }
+
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Ingrese la categoría")]
+        [RegularExpression("[C][0-9]{4}", ErrorMessage = "Error de Ingreso")]
+        public string catmat { get; set; }
+
+        [Required(ErrorMessage = "Ingrese el Precio")]
+        [Range(1, 500, ErrorMessage = "Entre 1 y 500")]
+        public decimal preuni { get; set; }
+
+        [Required(ErrorMessage = "Ingrese el Stock")]
+        [Range(1, 1000, ErrorMessage = "Entre 1 y 1000")]
+        public int stock { get; set; }

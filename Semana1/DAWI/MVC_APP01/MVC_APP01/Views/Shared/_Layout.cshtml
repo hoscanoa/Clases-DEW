@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color:aqua">
+
+    <div>
+        <img src="~/Imagenes/banner.jpg" width="100%" height="125px"/>
+    </div>
+
+    @*OPCIONES DE MENU*@
+    <div>
+        <table>
+            <tr style="background-color:white">
+                <td><a href="~/Proyecto/Index">Index</a></td>
+                <td><a href="~/Proyecto/Consulta">Consulta de Clientes</a></td>
+                <td><a href="#">Proceso</a></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div>@RenderBody()</div>
+
+    <div>
+        <strong style="font-size:large; color:violet">
+            Cibertec@2015 Derechos Reservados
+        </strong>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

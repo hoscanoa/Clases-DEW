@@ -1,0 +1,47 @@
+﻿@model APP_MANTENIMIENTO.Models.Empleado
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>¿Està seguro de querer eliminar a este empleado?</h3>
+<fieldset>
+    <legend>Empleado</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Apellido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Apellido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fingre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fingre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sueldo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sueldo)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Regresar al Listado", "Index")
+    </p>
+}

@@ -1,0 +1,32 @@
+﻿@model APP_DBCONTEXT002.Models.Tb_Material
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>Nuevo Material</h2>
+<br />
+
+@using (Html.BeginForm())
+{ 
+    <div>Código de Material</div>
+    <div>@Html.TextBoxFor(Model=>Model.idmat)</div>
+    
+    <div>Descripción</div>
+    <div>@Html.TextBoxFor(Model=>Model.desmat)</div>
+    
+    
+    <div>Categoria</div>
+    <div>@Html.TextBoxFor(Model=>Model.catmat)</div>
+    
+    <div>Precio Unitario</div>
+    <div>@Html.TextBoxFor(Model=>Model.preuni)</div>
+    
+    <div>Stock</div>
+    <div>@Html.TextBoxFor(Model=>Model.stock)</div>
+    
+    <div><input type="submit" value="Procesar"/></div>    
+    <div>@Html.ValidationSummary()</div>
+    
+}
+
+@Html.ActionLink("Retornar al Listado", "index");

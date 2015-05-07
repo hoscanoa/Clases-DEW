@@ -1,0 +1,28 @@
+﻿@model IEnumerable<APP_DBCONTEXT002.Models.Tb_Material>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Mantenimiento de Materiales</h2>
+<br />
+@Html.ActionLink("Nuevo Material", "Nuevo")
+<br />
+<table>
+    <tr>
+        <td>Código Material</td>
+        <td>Descripción de Material</td>
+        <td>Categoria de Material</td>
+        <td>Precio Unitario</td>
+        <td>Stock</td>
+    </tr>
+    @foreach(var reg in Model)
+    {
+        <tr>
+            <td>@reg.idmat</td>
+            <td>@reg.desmat</td>
+            <td>@reg.catmat</td>
+            <td>@reg.preuni</td>
+            <td>@reg.stock</td>
+        </tr>
+    }
+</table>
