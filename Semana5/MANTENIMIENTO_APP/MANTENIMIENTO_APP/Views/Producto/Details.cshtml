@@ -1,0 +1,43 @@
+﻿@model MANTENIMIENTO_APP.Models.Producto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Producto</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Precio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Precio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.categoria.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.categoria.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.proveedor.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.proveedor.Nombre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProductoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

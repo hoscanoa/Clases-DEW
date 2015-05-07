@@ -1,0 +1,60 @@
+﻿@model MANTENIMIENTO_APP.Models.Empleado
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Empleado</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Apellido)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Apellido)
+            @Html.ValidationMessageFor(model => model.Apellido)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DNI)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DNI)
+            @Html.ValidationMessageFor(model => model.DNI)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nacimiento)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nacimiento, new { type="date"})
+            @Html.ValidationMessageFor(model => model.Nacimiento)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

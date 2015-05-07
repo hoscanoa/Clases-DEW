@@ -1,0 +1,43 @@
+﻿@model MANTENIMIENTO_APP.Models.Empleado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Empleado</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Apellido)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Apellido)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DNI)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DNI)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nacimiento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nacimiento)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Codigo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
