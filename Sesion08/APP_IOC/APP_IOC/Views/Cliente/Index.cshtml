@@ -1,0 +1,19 @@
+﻿@model IEnumerable<APP_IOC.Models.clientes>
+
+@{
+    ViewBag.Title = "Index";
+    WebGrid wg = new WebGrid(Model);
+    }
+
+<h2>Listado de CLiente</h2>
+
+@wg.GetHtml(
+    columns: new[] { 
+    wg.Column("IdCliente",header:"Codigo"),
+    wg.Column("NomCliente",header:"Cliente"),
+    wg.Column("DirCliente",header:"Direccion"),
+    wg.Column("FonoCliente",header:"Telefono")
+    }
+    
+   
+)

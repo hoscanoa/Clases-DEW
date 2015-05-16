@@ -1,0 +1,28 @@
+﻿@model IEnumerable<PREGUNTA1.Models.productos>
+
+@{
+    ViewBag.Title = "Index";
+    WebGrid wg = new WebGrid(Model, rowsPerPage:5);
+}
+
+<h2>Lista de Productos</h2>
+
+<style>
+    .FilaAlterna
+    {
+        background-color:#EAF2D3;
+        padding:3px 7px 2px;
+    }
+</style>
+
+
+@wg.GetHtml(
+alternatingRowStyle:"FilaAlterna",
+columns: new []{
+        wg.Column("IdProducto", header:"ID",canSort:false),
+        wg.Column("NomProducto", header:"Producto",format:(item)=>Html.ActionLink((string)item.NomProducto,"","")),
+        wg.Column("PrecioUnidad", header:"Precio",format:(item)=>item.PrecioUnidad.ToString("0.00")),
+        wg.Column("Activo", header:"Devaluado",format:(item)=>Html.CheckBox((string)item.NomProducto,(bool)item.Activo),canSort:false),
+        wg.Column("",header:"Accciones",format:@<text>@Html.ActionLink("Editar","","")@Html.ActionLink("Eliminar","","")</text>)
+    }
+)

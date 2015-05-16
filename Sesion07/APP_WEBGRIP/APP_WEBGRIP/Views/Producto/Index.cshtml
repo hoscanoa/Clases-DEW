@@ -1,0 +1,21 @@
+﻿@model IEnumerable<APP_WEBGRIP.Models.productos>
+@{
+    ViewBag.Title = "Index";
+    WebGrid wg = new WebGrid(Model);
+}
+
+<h2>LISTADO DE PRODUCTOS</h2>
+
+@wg.GetHtml(
+        columns: new[] { 
+        wg.Column("IdProducto",header:"ID",canSort:false),
+        wg.Column("NomProducto",header:"Producto",
+        format:(item)=>Html.ActionLink((string)item.NomProducto,"","")),
+        wg.Column("PrecioUnidad",header:"Precio Uni",
+        format:(item)=>item.PrecioUnidad.ToString("0.00")),
+        wg.Column("Activo",header:"Habilitado",
+        format:(item)=>Html.CheckBox((string)item.NomProducto,(bool)item.Activo),canSort:false),
+        wg.Column("",header:"Acciones",format:@<text>@Html.ActionLink("Editar","",""),
+                @Html.ActionLink("Eliminar","","")</text>)
+        }
+)
