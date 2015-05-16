@@ -1,0 +1,21 @@
+﻿@model IEnumerable<PREGUNTA2.Models.proveedores>
+
+@{
+    ViewBag.Title = "Index";
+    WebGrid wg = new WebGrid(Model);
+}
+
+<h2>LISTA DE PROVEEDORES</h2>
+
+@wg.GetHtml(
+columns:new[]{
+    wg.Column("IdProveedor","CODIGO"),
+    wg.Column("NomProveedor","PROVEEDOR"),
+    wg.Column("DirProveedor","DIRECCION"),
+    wg.Column("NomContacto","CONTACTO"),
+    wg.Column("CargoContacto","CARGO CONTACTO"),    
+    wg.Column("fonoProveedor","TELEFONO"),
+    wg.Column("FaxProveedor","FAX"),
+    wg.Column("paises.NombrePais","PAIS"),
+}
+);

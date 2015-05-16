@@ -1,0 +1,17 @@
+﻿@model IEnumerable<PREGUNTA1.Models.clientes>
+@{
+    ViewBag.Title = "Index";
+    WebGrid wg = new WebGrid(Model);
+}
+
+<h2>LISTA DE CLIENTES</h2>
+
+@wg.GetHtml(
+columns:new[]{
+    wg.Column("IdCliente",header:"CODIGO",canSort:false),
+    wg.Column("NomCliente",header:"RAZON SOCIAL"),
+    wg.Column("DirCliente",header:"DIRECCION"),
+    wg.Column("paises.NombrePais",header:"PAIS",canSort:false),
+    wg.Column("",header:"ACCIONES",format:@<text>@Html.ActionLink("Editar","","")@Html.ActionLink("Eliminar","","")</text>)
+}
+)
